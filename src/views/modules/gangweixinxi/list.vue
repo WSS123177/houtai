@@ -9,8 +9,8 @@
 						<el-input v-model="searchForm.yuanxiaomingcheng" placeholder="岗位名称" clearable></el-input>
 					</div>
 					<div :style='{"margin":"0","flexDirection":"column","display":"flex"}'>
-						<label :style='{"margin":"0","color":"#000","textAlign":"center","display":"inline-block","width":"100%","lineHeight":"40px","fontSize":"14px","fontWeight":"500","height":"40px"}' class="item-label">岗位专业</label>
-						<el-input v-model="searchForm.yuanxiaozhuanye" placeholder="岗位专业" clearable></el-input>
+						<label :style='{"margin":"0","color":"#000","textAlign":"center","display":"inline-block","width":"100%","lineHeight":"40px","fontSize":"14px","fontWeight":"500","height":"40px"}' class="item-label">岗位编号</label>
+						<el-input v-model="searchForm.yuanxiaozhuanye" placeholder="岗位编号" clearable></el-input>
 					</div>
 					<el-button :style='{"border":"1px solid #97C9D6","cursor":"pointer","padding":"0 24px","boxShadow":"0px 2px 2px 0px #78ABC3","outline":"none","margin":"10px 0 0","color":"#78ABC3","borderRadius":"30px","background":"#fff","width":"auto","fontSize":"14px","height":"40px"}' type="success" @click="search()">查询</el-button>
 				</el-row>
@@ -34,7 +34,7 @@
 					v-loading="dataListLoading"
 				@selection-change="selectionChangeHandler">
 					<el-table-column :resizable='true' type="selection" align="center" width="50"></el-table-column>
-					<el-table-column :resizable='true' :sortable='false' label="索引" type="index" width="50" />
+					<el-table-column :resizable='true' :sortable='false' label="岗位编号" type="index" width="100" />
 					<el-table-column :resizable='true' :sortable='false'  
 						prop="yuanxiaomingcheng"
 					label="岗位名称">
@@ -53,14 +53,14 @@
 					</el-table-column>
 					<el-table-column :resizable='true' :sortable='false'  
 						prop="yuanxiaozhuanye"
-					label="岗位专业">
+					label="考试类型">
 						<template slot-scope="scope">
 							{{scope.row.yuanxiaozhuanye}}
 						</template>
 					</el-table-column>
 					<el-table-column :resizable='true' :sortable='false'  
 						prop="fuzeren"
-					label="负责人">
+					label="职位介绍">
 						<template slot-scope="scope">
 							{{scope.row.fuzeren}}
 						</template>
@@ -74,21 +74,21 @@
 					</el-table-column>
 					<el-table-column :resizable='true' :sortable='false'  
 						prop="yuanxiaodizhi"
-					label="岗位地址">
+					label="报考地区">
 						<template slot-scope="scope">
 							{{scope.row.yuanxiaodizhi}}
 						</template>
 					</el-table-column>
 					<el-table-column :resizable='true' :sortable='false'  
 						prop="zhaoshengrenshu"
-					label="招生人数">
+					label="招录人数">
 						<template slot-scope="scope">
 							{{scope.row.zhaoshengrenshu}}
 						</template>
 					</el-table-column>
 					<el-table-column :resizable='true' :sortable='false'  
 						prop="fenshuxian"
-					label="分数线">
+					label="单位性质">
 						<template slot-scope="scope">
 							{{scope.row.fenshuxian}}
 						</template>
