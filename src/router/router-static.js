@@ -15,7 +15,7 @@ import center from '@/views/center'
     import dakaxinxi from '@/views/modules/dakaxinxi/list'
     import aboutus from '@/views/modules/aboutus/list'
     import linianzhenti from '@/views/modules/linianzhenti/list'
-    import kaoyandaojishi from '@/views/modules/guokaodaojishi/list'
+    import kaoyandaojishi from '@/views/modules/gongkaodaojishi/list'
     import cepingxinxi from '@/views/modules/cepingxinxi/list'
     import zaixianceping from '@/views/modules/zaixianceping/list'
     import kaoyanzhengce from '@/views/modules/kaogongzhengce/list'
@@ -57,7 +57,7 @@ const routes = [{
     }
       ,{
 	path: '/news',
-        name: '复试调剂',
+        name: '调剂递补',
         component: news
       }
       ,{
@@ -77,7 +77,7 @@ const routes = [{
       }
       ,{
 	path: '/kaoyandaojishi',
-        name: '考研倒计时',
+        name: '公考倒计时',
         component: kaoyandaojishi
       }
       ,{
@@ -92,7 +92,7 @@ const routes = [{
       }
       ,{
 	path: '/kaoyanzhengce',
-        name: '考研政策',
+        name: '考公政策',
         component: kaoyanzhengce
       }
       ,{
@@ -102,7 +102,7 @@ const routes = [{
       }
       ,{
 	path: '/gangweixinxi',
-        name: '院校信息',
+        name: '岗位信息',
         component: gangweixinxi
       }
       ,{

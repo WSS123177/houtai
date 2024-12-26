@@ -9,15 +9,15 @@
 			label-width="100px"
 		>
 			<template >
-				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' class="input" v-if="type!='info'"  label="院校名称" prop="yuanxiaomingcheng">
-					<el-input v-model="ruleForm.yuanxiaomingcheng" placeholder="院校名称" clearable  :readonly="ro.yuanxiaomingcheng"></el-input>
+				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' class="input" v-if="type!='info'"  label="岗位名称" prop="yuanxiaomingcheng">
+					<el-input v-model="ruleForm.yuanxiaomingcheng" placeholder="岗位名称" clearable  :readonly="ro.yuanxiaomingcheng"></el-input>
 				</el-form-item>
-				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' v-else class="input" label="院校名称" prop="yuanxiaomingcheng">
-					<el-input v-model="ruleForm.yuanxiaomingcheng" placeholder="院校名称" readonly></el-input>
+				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' v-else class="input" label="岗位名称" prop="yuanxiaomingcheng">
+					<el-input v-model="ruleForm.yuanxiaomingcheng" placeholder="岗位名称" readonly></el-input>
 				</el-form-item>
-				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' class="upload" v-if="type!='info' && !ro.yuanxiaotupian" label="院校图片" prop="yuanxiaotupian">
+				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' class="upload" v-if="type!='info' && !ro.yuanxiaotupian" label="岗位图片" prop="yuanxiaotupian">
 					<file-upload
-						tip="点击上传院校图片"
+						tip="点击上传岗位图片"
 						action="file/upload"
 						:limit="3"
 						:multiple="true"
@@ -25,21 +25,21 @@
 						@change="yuanxiaotupianUploadChange"
 					></file-upload>
 				</el-form-item>
-				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' class="upload" v-else-if="ruleForm.yuanxiaotupian" label="院校图片" prop="yuanxiaotupian">
+				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' class="upload" v-else-if="ruleForm.yuanxiaotupian" label="岗位图片" prop="yuanxiaotupian">
 					<img v-if="ruleForm.yuanxiaotupian.substring(0,4)=='http'" class="upload-img" style="margin-right:20px;" v-bind:key="index" :src="ruleForm.yuanxiaotupian.split(',')[0]" width="100" height="100">
 					<img v-else class="upload-img" style="margin-right:20px;" v-bind:key="index" v-for="(item,index) in ruleForm.yuanxiaotupian.split(',')" :src="$base.url+item" width="100" height="100">
 				</el-form-item>
-				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' class="input" v-if="type!='info'"  label="院校专业" prop="yuanxiaozhuanye">
-					<el-input v-model="ruleForm.yuanxiaozhuanye" placeholder="院校专业" clearable  :readonly="ro.yuanxiaozhuanye"></el-input>
+				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' class="input" v-if="type!='info'"  label="岗位编号" prop="yuanxiaozhuanye">
+					<el-input v-model="ruleForm.yuanxiaozhuanye" placeholder="岗位编号" clearable  :readonly="ro.yuanxiaozhuanye"></el-input>
 				</el-form-item>
-				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' v-else class="input" label="院校专业" prop="yuanxiaozhuanye">
-					<el-input v-model="ruleForm.yuanxiaozhuanye" placeholder="院校专业" readonly></el-input>
+				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' v-else class="input" label="岗位编号" prop="yuanxiaozhuanye">
+					<el-input v-model="ruleForm.yuanxiaozhuanye" placeholder="岗位编号" readonly></el-input>
 				</el-form-item>
-				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' class="input" v-if="type!='info'"  label="负责人" prop="fuzeren">
-					<el-input v-model="ruleForm.fuzeren" placeholder="负责人" clearable  :readonly="ro.fuzeren"></el-input>
+				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' class="input" v-if="type!='info'"  label="招考单位" prop="fuzeren">
+					<el-input v-model="ruleForm.fuzeren" placeholder="招考单位" clearable  :readonly="ro.fuzeren"></el-input>
 				</el-form-item>
-				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' v-else class="input" label="负责人" prop="fuzeren">
-					<el-input v-model="ruleForm.fuzeren" placeholder="负责人" readonly></el-input>
+				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' v-else class="input" label="招考单位" prop="fuzeren">
+					<el-input v-model="ruleForm.fuzeren" placeholder="招考单位" readonly></el-input>
 				</el-form-item>
 				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' class="input" v-if="type!='info'"  label="联系电话" prop="lianxidianhua">
 					<el-input v-model="ruleForm.lianxidianhua" placeholder="联系电话" clearable  :readonly="ro.lianxidianhua"></el-input>
@@ -47,23 +47,23 @@
 				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' v-else class="input" label="联系电话" prop="lianxidianhua">
 					<el-input v-model="ruleForm.lianxidianhua" placeholder="联系电话" readonly></el-input>
 				</el-form-item>
-				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' class="input" v-if="type!='info'"  label="院校地址" prop="yuanxiaodizhi">
-					<el-input v-model="ruleForm.yuanxiaodizhi" placeholder="院校地址" clearable  :readonly="ro.yuanxiaodizhi"></el-input>
+				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' class="input" v-if="type!='info'"  label="报考地区" prop="yuanxiaodizhi">
+					<el-input v-model="ruleForm.yuanxiaodizhi" placeholder="报考地区" clearable  :readonly="ro.yuanxiaodizhi"></el-input>
 				</el-form-item>
-				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' v-else class="input" label="院校地址" prop="yuanxiaodizhi">
-					<el-input v-model="ruleForm.yuanxiaodizhi" placeholder="院校地址" readonly></el-input>
+				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' v-else class="input" label="报考地区" prop="yuanxiaodizhi">
+					<el-input v-model="ruleForm.yuanxiaodizhi" placeholder="报考地区" readonly></el-input>
 				</el-form-item>
-				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' class="input" v-if="type!='info'"  label="招生人数" prop="zhaoshengrenshu">
-					<el-input v-model="ruleForm.zhaoshengrenshu" placeholder="招生人数" clearable  :readonly="ro.zhaoshengrenshu"></el-input>
+				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' class="input" v-if="type!='info'"  label="招录人数" prop="zhaoshengrenshu">
+					<el-input v-model="ruleForm.zhaoshengrenshu" placeholder="招录人数" clearable  :readonly="ro.zhaoshengrenshu"></el-input>
 				</el-form-item>
-				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' v-else class="input" label="招生人数" prop="zhaoshengrenshu">
-					<el-input v-model="ruleForm.zhaoshengrenshu" placeholder="招生人数" readonly></el-input>
+				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' v-else class="input" label="招录人数" prop="zhaoshengrenshu">
+					<el-input v-model="ruleForm.zhaoshengrenshu" placeholder="招录人数" readonly></el-input>
 				</el-form-item>
-				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' class="input" v-if="type!='info'"  label="分数线" prop="fenshuxian">
-					<el-input v-model="ruleForm.fenshuxian" placeholder="分数线" clearable  :readonly="ro.fenshuxian"></el-input>
+				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' class="input" v-if="type!='info'"  label="考试类型" prop="fenshuxian">
+					<el-input v-model="ruleForm.fenshuxian" placeholder="考试类型" clearable  :readonly="ro.fenshuxian"></el-input>
 				</el-form-item>
-				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' v-else class="input" label="分数线" prop="fenshuxian">
-					<el-input v-model="ruleForm.fenshuxian" placeholder="分数线" readonly></el-input>
+				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' v-else class="input" label="考试类型" prop="fenshuxian">
+					<el-input v-model="ruleForm.fenshuxian" placeholder="考试类型" readonly></el-input>
 				</el-form-item>
 				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' class="date" v-if="type!='info'" label="成立日期" prop="chengliriqi">
 					<el-date-picker
@@ -79,19 +79,19 @@
 					<el-input v-model="ruleForm.chengliriqi" placeholder="成立日期" readonly></el-input>
 				</el-form-item>
 			</template>
-				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' class="textarea" v-if="type!='info'" label="招生简介" prop="zhaoshengjianjie">
+				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' class="textarea" v-if="type!='info'" label="单位性质" prop="zhaoshengjianjie">
 					<el-input
 					  style="min-width: 200px; max-width: 600px;"
 					  type="textarea"
 					  :rows="8"
-					  placeholder="招生简介"
+					  placeholder="单位性质"
 					  v-model="ruleForm.zhaoshengjianjie" >
 					</el-input>
 				</el-form-item>
-				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' v-else-if="ruleForm.zhaoshengjianjie" label="招生简介" prop="zhaoshengjianjie">
+				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' v-else-if="ruleForm.zhaoshengjianjie" label="单位性质" prop="zhaoshengjianjie">
 					<span :style='{"fontSize":"14px","lineHeight":"40px","color":"#000","fontWeight":"500","display":"inline-block"}'>{{ruleForm.zhaoshengjianjie}}</span>
 				</el-form-item>
-				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' v-if="type!='info'"  label="院校简介" prop="yuanxiaojianjie">
+				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' v-if="type!='info'"  label="岗位公告" prop="yuanxiaojianjie">
 					<editor 
 						style="min-width: 200px; max-width: 600px;"
 						v-model="ruleForm.yuanxiaojianjie" 
@@ -99,7 +99,7 @@
 						action="file/upload">
 					</editor>
 				</el-form-item>
-				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' v-else-if="ruleForm.yuanxiaojianjie" label="院校简介" prop="yuanxiaojianjie">
+				<el-form-item :style='{"width":"50%","margin":"0 0 20px 0"}' v-else-if="ruleForm.yuanxiaojianjie" label="岗位公告" prop="yuanxiaojianjie">
                     <span :style='{"fontSize":"14px","lineHeight":"40px","color":"#000","fontWeight":"500","display":"inline-block"}' v-html="ruleForm.yuanxiaojianjie"></span>
                 </el-form-item>
 			<el-form-item :style='{"width":"100%","padding":"0","margin":"0"}' class="btn">
